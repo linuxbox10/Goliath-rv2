@@ -1,0 +1,960 @@
+<skin>
+  <!-- (Panel-M) -->
+  <screen name="Menu" position="0,0" size="1920,1080" title="Menu" flags="wfNoBorder" backgroundColor="transparent">
+    <ePixmap pixmap="Goliath_RV2_1080p_HD/back/menu_dont_copy.png" position="0,0" size="1920,1080" zPosition="1" alphatest="on" />
+    <widget backgroundColor="un20000000" font="Regular;40" halign="center" position="216,40" render="Label" size="495,60" source="title" transparent="1" foregroundColor="header" zPosition="2" />
+    <widget source="menu" render="Listbox" position="317,170" size="691,60" zPosition="2" scrollbarMode="showNever" transparent="1" foregroundColor="white" foregroundColorSelected="selectedFG" backgroundColor="da3636" backgroundColorSelected="da3636">
+      <convert type="TemplatedMultiContent">
+				{"template": [ MultiContentEntryText(pos = (15, 4), size = (620, 40), flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER|RT_WRAP, text = 0) ],
+                        	"fonts": [gFont("Regular", 36)],
+				"itemHeight": 50
+				}
+			</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="1404,45" size="269,42" font="Regular; 40" halign="left" backgroundColor="bgmain" transparent="1" zPosition="5" foregroundColor="header">
+      <convert type="ClockToText">Format:%d.%m.%Y</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="1679,45" size="149,42" font="Regular; 40" backgroundColor="bgmain" transparent="1" halign="center" valign="center" zPosition="6" foregroundColor="header">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <!-- ///*** MAIN MENU ***\\\ -->
+    <ePixmap pixmap="Goliath_RV2_1080p_HD/menu_icons/Utilities2.png" position="27,12" size="256,256" zPosition="2" name="icon_clock" alphatest="blend" />
+    <ePixmap pixmap="Goliath_RV2_1080p_HD/menu_icons/setup.png" position="1150,28" size="256,256" zPosition="0" name="icon_clock" alphatest="blend" />
+  </screen>
+  <screen name="menu_mainmenu" position="0,0" size="1920,1080" title="Main menu" flags="wfNoBorder" backgroundColor="transparent">
+    <ePixmap pixmap="Goliath_RV2_1080p_HD/menu_icons/Home.png" position="27,12" size="256,256" zPosition="1" name="icon_clock" alphatest="blend" />
+    <ePixmap pixmap="Goliath_RV2_1080p_HD/back/menu_dont_copy.png" position="0,0" size="1920,1080" zPosition="0" alphatest="on" />
+    <widget backgroundColor="un20000000" font="Regular;40" halign="center" position="216,40" render="Label" size="495,60" source="title" transparent="1" foregroundColor="header" zPosition="1" />
+    <widget source="menu" render="Listbox" position="317,170" size="691,60" zPosition="1" scrollbarMode="showNever" transparent="1" foregroundColor="white" foregroundColorSelected="selectedFG" backgroundColor="da3636" backgroundColorSelected="da3636">
+      <convert type="TemplatedMultiContent">
+				{"template": [ MultiContentEntryText(pos = (15, 4), size = (620, 40), flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER|RT_WRAP, text = 0) ],
+                        	"fonts": [gFont("Regular", 36)],
+				"itemHeight": 50
+				}
+			</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="1404,45" size="269,42" font="Regular; 40" halign="left" backgroundColor="bgmain" transparent="1" zPosition="5" foregroundColor="header">
+      <convert type="ClockToText">Format:%d.%m.%Y</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="1679,45" size="149,42" font="Regular; 40" backgroundColor="bgmain" transparent="1" halign="center" valign="center" zPosition="6" foregroundColor="header">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <!-- ///*** MAIN MENU ***\\\ -->
+    <widget source="menu" title="Timer selection" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/timer.png" position="1150,28" size="256,256" alphatest="blend" zPosition="-1">
+      <convert type="MenuEntryCompare">timer_menu</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/info.png" position="1150,28" size="256,256" alphatest="blend" zPosition="-1">
+      <convert type="MenuEntryCompare">info_screen</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/info.png" position="1150,28" size="256,256" alphatest="blend" zPosition="-1">
+    <convert type="MenuEntryCompare">Infopanel</convert>
+    <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/plugins.png" position="1150,28" size="256,256" alphatest="blend" zPosition="-1">
+      <convert type="MenuEntryCompare">plugin_selection</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/setup.png" position="1150,28" size="256,256" alphatest="blend" zPosition="-1">
+      <convert type="MenuEntryCompare">setup_selection</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/power.png" position="1150,28" size="256,256" alphatest="blend" zPosition="-1">
+      <convert type="MenuEntryCompare">standby_restart_list</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/yutube.png" position="1150,28" size="256,256" alphatest="blend" zPosition="-1">
+      <convert type="MenuEntryCompare">youtube_tv</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/apps.png" position="1150,28" size="256,256" alphatest="blend" zPosition="-1">
+      <convert type="MenuEntryCompare">blackhole_extra</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/Backup.png" position="1150,28" size="256,256" alphatest="blend" zPosition="-1">
+      <convert type="MenuEntryCompare">backup_screen</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/setup.png" position="1150,28" size="256,256" alphatest="blend" zPosition="-1">
+      <convert type="MenuEntryCompare">undefined</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/TSMedia.png" position="1150,28" size="256,256" alphatest="blend" zPosition="-1">
+      <convert type="MenuEntryCompare">TSmedia_mainmenu</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/TSPanel.png" position="1150,28" size="256,256" alphatest="blend" zPosition="-1">
+      <convert type="MenuEntryCompare">tspanel_mainmenu</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/kodi.png" position="1150,28" size="256,256" alphatest="blend" zPosition="-1">
+      <convert type="MenuEntryCompare">run_kodi</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/kodi.png" position="1150,28" size="256,256" alphatest="blend" zPosition="-1">
+      <convert type="MenuEntryCompare">start_kodi</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+  </screen>
+  <screen name="menu_system" position="0,0" size="1920,1080" title="Main menu" flags="wfNoBorder" backgroundColor="transparent">
+    <ePixmap pixmap="Goliath_RV2_1080p_HD/menu_icons/sistem.png" position="27,12" size="256,256" zPosition="2" name="icon_clock" alphatest="blend" />
+    <ePixmap pixmap="Goliath_RV2_1080p_HD/back/menu_dont_copy.png" position="0,0" size="1920,1080" zPosition="1" alphatest="on" />
+    <widget backgroundColor="un20000000" font="Regular;40" halign="center" position="216,40" render="Label" size="495,60" source="title" transparent="1" foregroundColor="header" zPosition="2" />
+    <widget source="menu" render="Listbox" position="317,170" size="691,60" zPosition="2" scrollbarMode="showNever" transparent="1" foregroundColor="white" foregroundColorSelected="selectedFG" backgroundColor="da3636" backgroundColorSelected="da3636">
+      <convert type="TemplatedMultiContent">
+				{"template": [ MultiContentEntryText(pos = (15, 4), size = (620, 40), flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER|RT_WRAP, text = 0) ],
+                        	"fonts": [gFont("Regular", 36)],
+				"itemHeight": 50
+				}
+			</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="1404,45" size="269,42" font="Regular; 40" halign="left" backgroundColor="bgmain" transparent="1" zPosition="5" foregroundColor="header">
+      <convert type="ClockToText">Format:%d.%m.%Y</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="1679,45" size="149,42" font="Regular; 40" backgroundColor="bgmain" transparent="1" halign="center" valign="center" zPosition="6" foregroundColor="header">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <!-- ///*** MAIN MENU ***\\\ -->
+    <widget source="menu" title="Timer selection" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/av.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">av_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" title="Timer selection" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/langulage.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">autolanguage_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" title="Timer selection" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/langulage.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">language_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget> 
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/usage_setup.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">usage_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/display_selection.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">display_selection</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/channelselection_setup.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">channelselection_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/epg_menu.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">epg_menu</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/network_menu.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">network_menu</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/recording_setup.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">recording_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/recording_setup.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">RecordPaths</convert>
+      <convert type="ConditionalShowHide" />
+    </widget> 
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/hardisk_selection.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">hardisk_selection</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/subtitle_setup.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">subtitle_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/timshift_setup.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">timshift_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/time_setup.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">time_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/osd_setup.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">osd_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/osd_setup.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">LED_Giga</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/remotecontrolcode.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">remotecontrolcode</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+     <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/anim.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">skin_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget> 
+     <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/Button_mirror.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">buttonsetup_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget> 
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/remotecontrolcode.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">remotecode</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>   
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/setup.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">videoenhancement_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/iptv_config.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">iptv_config</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/fan.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">tempfancontrol</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/fan.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">fansetup_config</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+   <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/osd_setup.png" position="1150,28" size="256,256" alphatest="blend">
+    <convert type="MenuEntryCompare">user_interface</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>
+  <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/remotecontrolcode.png" position="1150,28" size="256,256" alphatest="blend">
+    <convert type="MenuEntryCompare">remote_setup</convert>
+    <convert type="ConditionalShowHide" />
+  </widget>   
+  </screen>
+  <screen name="menu_setup" position="0,0" size="1920,1080" title="Main menu" flags="wfNoBorder" backgroundColor="transparent">
+    <ePixmap pixmap="Goliath_RV2_1080p_HD/back/menu_dont_copy.png" position="0,0" size="1920,1080" zPosition="1" alphatest="on" />
+    <widget backgroundColor="un20000000" font="Regular;40" halign="center" position="216,40" render="Label" size="495,60" source="title" transparent="1" foregroundColor="header" zPosition="2" />
+    <widget source="menu" render="Listbox" position="317,170" size="691,60" zPosition="2" scrollbarMode="showNever" transparent="1" foregroundColor="white" foregroundColorSelected="selectedFG" backgroundColor="da3636" backgroundColorSelected="da3636">
+      <convert type="TemplatedMultiContent">
+				{"template": [ MultiContentEntryText(pos = (15, 4), size = (620, 40), flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER|RT_WRAP, text = 0) ],
+                        	"fonts": [gFont("Regular", 36)],
+				"itemHeight": 50
+				}
+			</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="1404,45" size="269,42" font="Regular; 40" halign="left" backgroundColor="bgmain" transparent="1" zPosition="5" foregroundColor="header">
+      <convert type="ClockToText">Format:%d.%m.%Y</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="1679,45" size="149,42" font="Regular; 40" backgroundColor="bgmain" transparent="1" halign="center" valign="center" zPosition="6" foregroundColor="header">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <!-- ///*** MAIN MENU ***\\\ -->
+    <ePixmap pixmap="Goliath_RV2_1080p_HD/menu_icons/Utilities2.png" position="27,12" size="256,256" zPosition="2" name="icon_clock" alphatest="blend" />
+    <widget source="menu" title="Timer selection" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/search.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">service_searching_selection</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/common.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">cam_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/roditelji.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">parental_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/restart.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">factory_reset</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/Update.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">software_update</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/Devices alt_mirror.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">hdmicec</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/lcd.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">lcd4linux</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/display_selection.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">video_menu</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/Sound_mirror.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">audio_menu</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/recording_setup.png" position="1150,28" size="256,256" alphatest="blend">
+     <convert type="MenuEntryCompare">rec_setup</convert>
+     <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/setup.png" position="1150,28" size="256,256" alphatest="blend">
+     <convert type="MenuEntryCompare">system_selection</convert>
+     <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/epg_menu.png" position="1150,28" size="256,256" alphatest="blend">
+     <convert type="MenuEntryCompare">epg_menu</convert>
+     <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/Update.png" position="1150,28" size="256,256" alphatest="blend">
+     <convert type="MenuEntryCompare">software_manager</convert>
+     <convert type="ConditionalShowHide" />
+    </widget> 
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/setup.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">extended_selection</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/setup.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">vmc_init_setup</convert>
+      <convert type="ConditionalShowHide" />
+     </widget>   
+  </screen>
+  <screen name="menu_information" position="0,0" size="1920,1080" title="Main menu" flags="wfNoBorder" backgroundColor="transparent">
+    <ePixmap pixmap="Goliath_RV2_1080p_HD/back/menu_dont_copy.png" position="0,0" size="1920,1080" zPosition="1" alphatest="on" />
+    <widget backgroundColor="un20000000" font="Regular;40" halign="center" position="216,40" render="Label" size="495,60" source="title" transparent="1" foregroundColor="header" zPosition="2" />
+    <widget source="menu" render="Listbox" position="317,170" size="691,60" zPosition="2" scrollbarMode="showNever" transparent="1" foregroundColor="white" foregroundColorSelected="selectedFG" backgroundColor="da3636" backgroundColorSelected="da3636">
+      <convert type="TemplatedMultiContent">
+				{"template": [ MultiContentEntryText(pos = (15, 4), size = (620, 40), flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER|RT_WRAP, text = 0) ],
+                        	"fonts": [gFont("Regular", 36)],
+				"itemHeight": 50
+				}
+			</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="1404,45" size="269,42" font="Regular; 40" halign="left" backgroundColor="bgmain" transparent="1" zPosition="5" foregroundColor="header">
+      <convert type="ClockToText">Format:%d.%m.%Y</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="1679,45" size="149,42" font="Regular; 40" backgroundColor="bgmain" transparent="1" halign="center" valign="center" zPosition="6" foregroundColor="header">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <!-- ///*** MAIN MENU ***\\\ -->
+    <ePixmap pixmap="Goliath_RV2_1080p_HD/menu_icons/sisteminfo.png" position="27,12" size="256,256" zPosition="2" name="icon_clock" alphatest="blend" />
+    <widget source="menu" title="Timer selection" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/Info_mirror.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">about_screen</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" title="Timer selection" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/harddisk_check.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">device_screen</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/RAM_mirror.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">memory_screen</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/Connect To_mirror.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">network_screen</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/Sites.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">service_info_screen</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/Steam.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">streaming_clients_info_screen</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+  </screen>
+  <screen name="menu_shutdown" position="0,0" size="1920,1080" title="Main menu" flags="wfNoBorder" backgroundColor="transparent">
+    <ePixmap pixmap="Goliath_RV2_1080p_HD/back/menu_dont_copy.png" position="0,0" size="1920,1080" zPosition="1" alphatest="on" />
+    <widget backgroundColor="un20000000" font="Regular;40" halign="center" position="216,40" render="Label" size="495,60" source="title" transparent="1" foregroundColor="header" zPosition="2" />
+    <widget source="menu" render="Listbox" position="317,170" size="691,60" zPosition="2" scrollbarMode="showNever" transparent="1" foregroundColor="white" foregroundColorSelected="selectedFG" backgroundColor="da3636" backgroundColorSelected="da3636">
+      <convert type="TemplatedMultiContent">
+				{"template": [ MultiContentEntryText(pos = (15, 4), size = (620, 40), flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER|RT_WRAP, text = 0) ],
+                        	"fonts": [gFont("Regular", 36)],
+				"itemHeight": 50
+				}
+			</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="1404,45" size="269,42" font="Regular; 40" halign="left" backgroundColor="bgmain" transparent="1" zPosition="5" foregroundColor="header">
+      <convert type="ClockToText">Format:%d.%m.%Y</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="1679,45" size="149,42" font="Regular; 40" backgroundColor="bgmain" transparent="1" halign="center" valign="center" zPosition="6" foregroundColor="header">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <!-- ///*** MAIN MENU ***\\\ -->
+    <ePixmap pixmap="Goliath_RV2_1080p_HD/menu_icons/2power.png" position="27,12" size="256,256" zPosition="2" name="icon_clock" alphatest="blend" />
+    <widget source="menu" title="Timer selection" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/power.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">standby</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" title="Timer selection" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/Power - Sleep_mirror.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">deep_standby</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/Power - Shut Down_mirror.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">restart</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/restart.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">restart_enigma</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+  </screen>
+  <screen name="menu_scan" position="0,0" size="1920,1080" title="Main menu" flags="wfNoBorder" backgroundColor="transparent">
+    <ePixmap pixmap="Goliath_RV2_1080p_HD/back/menu_dont_copy.png" position="0,0" size="1920,1080" zPosition="1" alphatest="on" />
+    <widget backgroundColor="un20000000" font="Regular;40" halign="center" position="216,40" render="Label" size="495,60" source="title" transparent="1" foregroundColor="header" zPosition="2" />
+    <widget source="menu" render="Listbox" position="317,170" size="691,60" zPosition="2" scrollbarMode="showNever" transparent="1" foregroundColor="white" foregroundColorSelected="selectedFG" backgroundColor="da3636" backgroundColorSelected="da3636">
+      <convert type="TemplatedMultiContent">
+				{"template": [ MultiContentEntryText(pos = (15, 4), size = (620, 40), flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER|RT_WRAP, text = 0) ],
+                        	"fonts": [gFont("Regular", 36)],
+				"itemHeight": 50
+				}
+			</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="1404,45" size="269,42" font="Regular; 40" halign="left" backgroundColor="bgmain" transparent="1" zPosition="5" foregroundColor="header">
+      <convert type="ClockToText">Format:%d.%m.%Y</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="1679,45" size="149,42" font="Regular; 40" backgroundColor="bgmain" transparent="1" halign="center" valign="center" zPosition="6" foregroundColor="header">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <!-- ///*** MAIN MENU ***\\\ -->
+    <ePixmap pixmap="Goliath_RV2_1080p_HD/menu_icons/tuner.png" position="27,12" size="256,256" zPosition="2" name="icon_clock" alphatest="blend" />
+    <widget source="menu" title="Timer selection" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/Safari_mirror.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">tuner_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" title="Timer selection" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/buqet.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">autobouquetsmakermaker</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/search.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">auto_scan</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/manual_scan.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">manual_scan</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/satfinder.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">satfinder</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/cablescan.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">cablescan</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/positioner_setup.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">positioner_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/Sites.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">blindscan</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+  </screen>
+  <screen name="menu_osd_menu" position="0,0" size="1920,1080" title="Main menu" flags="wfNoBorder" backgroundColor="transparent">
+    <ePixmap pixmap="Goliath_RV2_1080p_HD/back/menu_dont_copy.png" position="0,0" size="1920,1080" zPosition="1" alphatest="on" />
+    <widget backgroundColor="un20000000" font="Regular;40" halign="center" position="216,40" render="Label" size="495,60" source="title" transparent="1" foregroundColor="header" zPosition="2" />
+    <widget source="menu" render="Listbox" position="317,170" size="691,60" zPosition="2" scrollbarMode="showNever" transparent="1" foregroundColor="white" foregroundColorSelected="selectedFG" backgroundColor="da3636" backgroundColorSelected="da3636">
+      <convert type="TemplatedMultiContent">
+				{"template": [ MultiContentEntryText(pos = (15, 4), size = (620, 40), flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER|RT_WRAP, text = 0) ],
+                        	"fonts": [gFont("Regular", 36)],
+				"itemHeight": 50
+				}
+			</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="1404,45" size="269,42" font="Regular; 40" halign="left" backgroundColor="bgmain" transparent="1" zPosition="5" foregroundColor="header">
+      <convert type="ClockToText">Format:%d.%m.%Y</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="1679,45" size="149,42" font="Regular; 40" backgroundColor="bgmain" transparent="1" halign="center" valign="center" zPosition="6" foregroundColor="header">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <!-- ///*** MAIN MENU ***\\\ -->
+    <ePixmap pixmap="Goliath_RV2_1080p_HD/menu_icons/Users2.png" position="27,12" size="256,256" zPosition="2" name="icon_clock" alphatest="blend" />
+    <widget source="menu" title="Timer selection" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/anim.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">animation_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" title="Timer selection" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/Button_mirror.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">buttonsetup_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/usage_setup.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">user_interface</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/skin.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">skin_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/harddisk_check.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">input_device_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/Keyboard_mirror.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">keyboard_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+     <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/Keyboard_mirror.png" position="1150,28" size="256,256" alphatest="blend">
+    <convert type="MenuEntryCompare">keyboard</convert>
+    <convert type="ConditionalShowHide" />
+  </widget> 
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/flags.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">language_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/logs.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">logs_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/Screen Resolution_mirror.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">osdsetup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/3d.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">osd3dsetup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+  </screen>
+  <screen name="menu_network" position="0,0" size="1920,1080" title="Main menu" flags="wfNoBorder" backgroundColor="transparent">
+    <ePixmap pixmap="Goliath_RV2_1080p_HD/back/menu_dont_copy.png" position="0,0" size="1920,1080" zPosition="1" alphatest="on" />
+    <widget backgroundColor="un20000000" font="Regular;40" halign="center" position="216,40" render="Label" size="495,60" source="title" transparent="1" foregroundColor="header" zPosition="2" />
+    <widget source="menu" render="Listbox" position="317,170" size="691,60" zPosition="2" scrollbarMode="showNever" transparent="1" foregroundColor="white" foregroundColorSelected="selectedFG" backgroundColor="da3636" backgroundColorSelected="da3636">
+      <convert type="TemplatedMultiContent">
+				{"template": [ MultiContentEntryText(pos = (15, 4), size = (620, 40), flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER|RT_WRAP, text = 0) ],
+                        	"fonts": [gFont("Regular", 36)],
+				"itemHeight": 50
+				}
+			</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="1404,45" size="269,42" font="Regular; 40" halign="left" backgroundColor="bgmain" transparent="1" zPosition="5" foregroundColor="header">
+      <convert type="ClockToText">Format:%d.%m.%Y</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="1679,45" size="149,42" font="Regular; 40" backgroundColor="bgmain" transparent="1" halign="center" valign="center" zPosition="6" foregroundColor="header">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <!-- ///*** MAIN MENU ***\\\ -->
+    <ePixmap pixmap="Goliath_RV2_1080p_HD/menu_icons/tuner.png" position="27,12" size="256,256" zPosition="2" name="icon_clock" alphatest="blend" />
+    <widget source="menu" title="Timer selection" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/Devices_mirror.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">device_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" title="Timer selection" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/Connect To_mirror.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">netmounts_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/afp.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">netafp_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/ftp.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">netftp_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/inadyn.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">Inadyn_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/dlna.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">netdlna_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/dlna.png" position="1150,28" size="256,256" alphatest="blend">
+    <convert type="MenuEntryCompare">minidlna_setup</convert>
+    <convert type="ConditionalShowHide" />
+    </widget>  
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/Desktop Folder_mirror.png" position="1150,28" size="256,256" alphatest="blend">
+    <convert type="MenuEntryCompare">openwebif</convert>
+    <convert type="ConditionalShowHide" />
+    </widget>  
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/subtitle_setup.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">netsabnzbd_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+     <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/nfs.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">netnfs_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget> 
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/vpn.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">netvpn_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/smb.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">netsmba_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/Command .png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">nettelnet_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/subtitle_setup.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">netushare_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+  </screen>
+  <screen name="menu_harddisk" position="0,0" size="1920,1080" title="Main menu" flags="wfNoBorder" backgroundColor="transparent">
+    <ePixmap pixmap="Goliath_RV2_1080p_HD/back/menu_dont_copy.png" position="0,0" size="1920,1080" zPosition="1" alphatest="on" />
+    <widget backgroundColor="un20000000" font="Regular;40" halign="center" position="216,40" render="Label" size="495,60" source="title" transparent="1" foregroundColor="header" zPosition="2" />
+    <widget source="menu" render="Listbox" position="317,170" size="691,60" zPosition="2" scrollbarMode="showNever" transparent="1" foregroundColor="white" foregroundColorSelected="selectedFG" backgroundColor="da3636" backgroundColorSelected="da3636">
+      <convert type="TemplatedMultiContent">
+				{"template": [ MultiContentEntryText(pos = (15, 4), size = (620, 40), flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER|RT_WRAP, text = 0) ],
+                        	"fonts": [gFont("Regular", 36)],
+				"itemHeight": 50
+				}
+			</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="1404,45" size="269,42" font="Regular; 40" halign="left" backgroundColor="bgmain" transparent="1" zPosition="5" foregroundColor="header">
+      <convert type="ClockToText">Format:%d.%m.%Y</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="1679,45" size="149,42" font="Regular; 40" backgroundColor="bgmain" transparent="1" halign="center" valign="center" zPosition="6" foregroundColor="header">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <!-- ///*** MAIN MENU ***\\\ -->
+    <ePixmap pixmap="Goliath_RV2_1080p_HD/menu_icons/disk.png" position="27,12" size="256,256" zPosition="2" name="icon_clock" alphatest="blend" />
+    <widget source="menu" title="Timer selection" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/hd_setup.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">harddisk_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" title="Timer selection" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/hd_init.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">harddisk_init</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/Device Manager_mirror.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">harddisk_check</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/hd_conv.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">harddisk_convert</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+  </screen>
+  <screen name="menu_timermenu" position="0,0" size="1920,1080" title="Main menu" flags="wfNoBorder" backgroundColor="transparent">
+    <ePixmap pixmap="Goliath_RV2_1080p_HD/back/menu_dont_copy.png" position="0,0" size="1920,1080" zPosition="1" alphatest="on" />
+    <widget backgroundColor="un20000000" font="Regular;40" halign="center" position="216,40" render="Label" size="495,60" source="title" transparent="1" foregroundColor="header" zPosition="2" />
+    <widget source="menu" render="Listbox" position="317,170" size="691,60" zPosition="2" scrollbarMode="showNever" transparent="1" foregroundColor="white" foregroundColorSelected="selectedFG" backgroundColor="da3636" backgroundColorSelected="da3636">
+      <convert type="TemplatedMultiContent">
+				{"template": [ MultiContentEntryText(pos = (15, 4), size = (620, 40), flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER|RT_WRAP, text = 0) ],
+                        	"fonts": [gFont("Regular", 36)],
+				"itemHeight": 50
+				}
+			</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="1404,45" size="269,42" font="Regular; 40" halign="left" backgroundColor="bgmain" transparent="1" zPosition="5" foregroundColor="header">
+      <convert type="ClockToText">Format:%d.%m.%Y</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="1679,45" size="149,42" font="Regular; 40" backgroundColor="bgmain" transparent="1" halign="center" valign="center" zPosition="6" foregroundColor="header">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <!-- ///*** MAIN MENU ***\\\ -->
+    <ePixmap pixmap="Goliath_RV2_1080p_HD/menu_icons/Reminders.png" position="27,12" size="256,256" zPosition="2" name="icon_clock" alphatest="blend" />
+    <widget source="menu" title="Timer selection" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/Auto_T.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">autotimer_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" title="Timer selection" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/cron.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">crontimer_edit</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/timer.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">timer_edit</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/Note_cronr.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">powertimer_edit</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+  </screen>
+  <screen name="menu_video_menu" position="0,0" size="1920,1080" title="Main menu" flags="wfNoBorder" backgroundColor="transparent">
+    <ePixmap pixmap="Goliath_RV2_1080p_HD/back/menu_dont_copy.png" position="0,0" size="1920,1080" zPosition="1" alphatest="on" />
+    <widget backgroundColor="un20000000" font="Regular;40" halign="center" position="216,40" render="Label" size="495,60" source="title" transparent="1" foregroundColor="header" zPosition="2" />
+    <widget source="menu" render="Listbox" position="317,170" size="691,60" zPosition="2" scrollbarMode="showNever" transparent="1" foregroundColor="white" foregroundColorSelected="selectedFG" backgroundColor="da3636" backgroundColorSelected="da3636">
+      <convert type="TemplatedMultiContent">
+				{"template": [ MultiContentEntryText(pos = (15, 4), size = (620, 40), flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER|RT_WRAP, text = 0) ],
+                        	"fonts": [gFont("Regular", 36)],
+				"itemHeight": 50
+				}
+			</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="1404,45" size="269,42" font="Regular; 40" halign="left" backgroundColor="bgmain" transparent="1" zPosition="5" foregroundColor="header">
+      <convert type="ClockToText">Format:%d.%m.%Y</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="1679,45" size="149,42" font="Regular; 40" backgroundColor="bgmain" transparent="1" halign="center" valign="center" zPosition="6" foregroundColor="header">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <!-- ///*** MAIN MENU ***\\\ -->
+    <ePixmap pixmap="Goliath_RV2_1080p_HD/menu_icons/Movie2.png" position="27,12" size="256,256" zPosition="2" name="icon_clock" alphatest="blend" />
+    <widget source="menu" title="Timer selection" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/TV Library_mirror.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">video_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" title="Timer selection" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/Videos Library_mirror.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">videoenhancement_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/My Video Apps_mirror.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">video_finetune</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/epg_menu.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">video_clipping</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+  </screen>
+  <screen name="menu_audio_menu" position="0,0" size="1920,1080" title="Main menu" flags="wfNoBorder" backgroundColor="transparent">
+    <ePixmap pixmap="Goliath_RV2_1080p_HD/back/menu_dont_copy.png" position="0,0" size="1920,1080" zPosition="1" alphatest="on" />
+    <widget backgroundColor="un20000000" font="Regular;40" halign="center" position="216,40" render="Label" size="495,60" source="title" transparent="1" foregroundColor="header" zPosition="2" />
+    <widget source="menu" render="Listbox" position="317,170" size="691,60" zPosition="2" scrollbarMode="showNever" transparent="1" foregroundColor="white" foregroundColorSelected="selectedFG" backgroundColor="da3636" backgroundColorSelected="da3636">
+      <convert type="TemplatedMultiContent">
+				{"template": [ MultiContentEntryText(pos = (15, 4), size = (620, 40), flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER|RT_WRAP, text = 0) ],
+                        	"fonts": [gFont("Regular", 36)],
+				"itemHeight": 50
+				}
+			</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="1404,45" size="269,42" font="Regular; 40" halign="left" backgroundColor="bgmain" transparent="1" zPosition="5" foregroundColor="header">
+      <convert type="ClockToText">Format:%d.%m.%Y</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="1679,45" size="149,42" font="Regular; 40" backgroundColor="bgmain" transparent="1" halign="center" valign="center" zPosition="6" foregroundColor="header">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <!-- ///*** MAIN MENU ***\\\ -->
+    <ePixmap pixmap="Goliath_RV2_1080p_HD/menu_icons/Music2.png" position="27,12" size="256,256" zPosition="2" name="icon_clock" alphatest="blend" />
+    <widget source="menu" title="Timer selection" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/Sound_mirror.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">audio_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" title="Timer selection" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/Podcasts Library_mirror.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">Volume_Adjust</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/sub_t.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">subtitle_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/langulage.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">autolanguage_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+  </screen>
+  <screen name="menu_rec" position="0,0" size="1920,1080" title="Main menu" flags="wfNoBorder" backgroundColor="transparent">
+    <ePixmap pixmap="Goliath_RV2_1080p_HD/back/menu_dont_copy.png" position="0,0" size="1920,1080" zPosition="1" alphatest="on" />
+    <widget backgroundColor="un20000000" font="Regular;40" halign="center" position="216,40" render="Label" size="495,60" source="title" transparent="1" foregroundColor="header" zPosition="2" />
+    <widget source="menu" render="Listbox" position="317,170" size="691,60" zPosition="2" scrollbarMode="showNever" transparent="1" foregroundColor="white" foregroundColorSelected="selectedFG" backgroundColor="da3636" backgroundColorSelected="da3636">
+      <convert type="TemplatedMultiContent">
+				{"template": [ MultiContentEntryText(pos = (15, 4), size = (620, 40), flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER|RT_WRAP, text = 0) ],
+                        	"fonts": [gFont("Regular", 36)],
+				"itemHeight": 50
+				}
+			</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="1404,45" size="269,42" font="Regular; 40" halign="left" backgroundColor="bgmain" transparent="1" zPosition="5" foregroundColor="header">
+      <convert type="ClockToText">Format:%d.%m.%Y</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="1679,45" size="149,42" font="Regular; 40" backgroundColor="bgmain" transparent="1" halign="center" valign="center" zPosition="6" foregroundColor="header">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <!-- ///*** MAIN MENU ***\\\ -->
+    <ePixmap pixmap="Goliath_RV2_1080p_HD/menu_icons/MPlayerX.png" position="27,12" size="256,256" zPosition="2" name="icon_clock" alphatest="blend" />
+    <widget source="menu" title="Timer selection" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/timshift_setup.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">timshift_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" title="Timer selection" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/TV Library_mirror.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">recording_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+  </screen>
+  <screen name="menu_cam" position="0,0" size="1920,1080" title="Main menu" flags="wfNoBorder" backgroundColor="transparent">
+    <ePixmap pixmap="Goliath_RV2_1080p_HD/back/menu_dont_copy.png" position="0,0" size="1920,1080" zPosition="1" alphatest="on" />
+    <widget backgroundColor="un20000000" font="Regular;40" halign="center" position="216,40" render="Label" size="495,60" source="title" transparent="1" foregroundColor="header" zPosition="2" />
+    <widget source="menu" render="Listbox" position="317,170" size="691,60" zPosition="2" scrollbarMode="showNever" transparent="1" foregroundColor="white" foregroundColorSelected="selectedFG" backgroundColor="da3636" backgroundColorSelected="da3636">
+      <convert type="TemplatedMultiContent">
+				{"template": [ MultiContentEntryText(pos = (15, 4), size = (620, 40), flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER|RT_WRAP, text = 0) ],
+                        	"fonts": [gFont("Regular", 36)],
+				"itemHeight": 50
+				}
+			</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="1404,45" size="269,42" font="Regular; 40" halign="left" backgroundColor="bgmain" transparent="1" zPosition="5" foregroundColor="header">
+      <convert type="ClockToText">Format:%d.%m.%Y</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="1679,45" size="149,42" font="Regular; 40" backgroundColor="bgmain" transparent="1" halign="center" valign="center" zPosition="6" foregroundColor="header">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <!-- ///*** MAIN MENU ***\\\ -->
+    <ePixmap pixmap="Goliath_RV2_1080p_HD/menu_icons/Desktop2.png" position="27,12" size="256,256" zPosition="2" name="icon_clock" alphatest="blend" />
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/common.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">ci_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/Devices_mirror.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">ci_assign</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+  </screen>
+  <screen name="menu_extended" position="0,0" size="1920,1080" title="Main menu" flags="wfNoBorder" backgroundColor="transparent">
+    <ePixmap pixmap="Goliath_RV2_1080p_HD/back/menu_dont_copy.png" position="0,0" size="1920,1080" zPosition="1" alphatest="on" />
+    <widget backgroundColor="un20000000" font="Regular;40" halign="center" position="216,40" render="Label" size="495,60" source="title" transparent="1" foregroundColor="header" zPosition="2" />
+    <widget source="menu" render="Listbox" position="317,170" size="691,60" zPosition="2" scrollbarMode="showNever" transparent="1" foregroundColor="white" foregroundColorSelected="selectedFG" backgroundColor="da3636" backgroundColorSelected="da3636">
+      <convert type="TemplatedMultiContent">
+				{"template": [ MultiContentEntryText(pos = (15, 4), size = (620, 40), flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER|RT_WRAP, text = 0) ],
+                        	"fonts": [gFont("Regular", 36)],
+				"itemHeight": 50
+				}
+			</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="1404,45" size="269,42" font="Regular; 40" halign="left" backgroundColor="bgmain" transparent="1" zPosition="5" foregroundColor="header">
+      <convert type="ClockToText">Format:%d.%m.%Y</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="1679,45" size="149,42" font="Regular; 40" backgroundColor="bgmain" transparent="1" halign="center" valign="center" zPosition="6" foregroundColor="header">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <!-- ///*** MAIN MENU ***\\\ -->
+    <ePixmap pixmap="Goliath_RV2_1080p_HD/menu_icons/set.png" position="27,12" size="256,256" zPosition="2" name="icon_clock" alphatest="blend" />
+    <widget source="menu" title="Timer selection" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/hardisk_selection.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">hardisk_selection</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" title="Timer selection" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/network_menu.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">network_menu</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/Devices alt_mirror.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">hdmicec</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/Note_cronr.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">time_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/logs.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">logs_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/fan.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">fansetup_config</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/Update.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">factory_reset</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/fan.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">tempfancontrol</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/Podcasts Library_mirror.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">rfmod_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/remotecontrolcode.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">remotecode</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+  </screen>
+  <screen name="menu_display" position="0,0" size="1920,1080" title="Main menu" flags="wfNoBorder" backgroundColor="transparent">
+    <ePixmap pixmap="Goliath_RV2_1080p_HD/back/menu_dont_copy.png" position="0,0" size="1920,1080" zPosition="1" alphatest="on" />
+    <widget backgroundColor="un20000000" font="Regular;40" halign="center" position="216,40" render="Label" size="495,60" source="title" transparent="1" foregroundColor="header" zPosition="2" />
+    <widget source="menu" render="Listbox" position="317,170" size="691,60" zPosition="2" scrollbarMode="showNever" transparent="1" foregroundColor="white" foregroundColorSelected="selectedFG" backgroundColor="da3636" backgroundColorSelected="da3636">
+      <convert type="TemplatedMultiContent">
+				{"template": [ MultiContentEntryText(pos = (15, 4), size = (620, 40), flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER|RT_WRAP, text = 0) ],
+                        	"fonts": [gFont("Regular", 36)],
+				"itemHeight": 50
+				}
+			</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="1404,45" size="269,42" font="Regular; 40" halign="left" backgroundColor="bgmain" transparent="1" zPosition="5" foregroundColor="header">
+      <convert type="ClockToText">Format:%d.%m.%Y</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="1679,45" size="149,42" font="Regular; 40" backgroundColor="bgmain" transparent="1" halign="center" valign="center" zPosition="6" foregroundColor="header">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <!-- ///*** MAIN MENU ***\\\ -->
+    <ePixmap pixmap="Goliath_RV2_1080p_HD/menu_icons/Parallels.png" position="27,12" size="256,256" zPosition="2" name="icon_clock" alphatest="blend" />
+    <widget source="menu" title="Timer selection" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/display_selection.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">display_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" title="Timer selection" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/lcd.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">lcd_skin_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/skin.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">lcd4linux</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/display_selection.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">VFD_INI</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+  </screen>
+  <screen name="menu_epg" position="0,0" size="1920,1080" title="Main menu" flags="wfNoBorder" backgroundColor="transparent">
+    <ePixmap pixmap="Goliath_RV2_1080p_HD/back/menu_dont_copy.png" position="0,0" size="1920,1080" zPosition="1" alphatest="on" />
+    <widget backgroundColor="un20000000" font="Regular;40" halign="center" position="216,40" render="Label" size="495,60" source="title" transparent="1" foregroundColor="header" zPosition="2" />
+    <widget source="menu" render="Listbox" position="317,170" size="691,60" zPosition="2" scrollbarMode="showNever" transparent="1" foregroundColor="white" foregroundColorSelected="selectedFG" backgroundColor="da3636" backgroundColorSelected="da3636">
+      <convert type="TemplatedMultiContent">
+				{"template": [ MultiContentEntryText(pos = (15, 4), size = (620, 40), flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER|RT_WRAP, text = 0) ],
+                        	"fonts": [gFont("Regular", 36)],
+				"itemHeight": 50
+				}
+			</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="1404,45" size="269,42" font="Regular; 40" halign="left" backgroundColor="bgmain" transparent="1" zPosition="5" foregroundColor="header">
+      <convert type="ClockToText">Format:%d.%m.%Y</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="1679,45" size="149,42" font="Regular; 40" backgroundColor="bgmain" transparent="1" halign="center" valign="center" zPosition="6" foregroundColor="header">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <!-- ///*** MAIN MENU ***\\\ -->
+    <ePixmap pixmap="Goliath_RV2_1080p_HD/menu_icons/Subtitles.png" position="27,12" size="256,256" zPosition="2" name="icon_clock" alphatest="blend" />
+    <widget source="menu" title="Timer selection" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/channelselection_setup.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">epgrefresh</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" title="Timer selection" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/timshift_setup.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">epg_setup</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/Update.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">epgloadsave_menu</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/usage_setup.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">setup_epginfobar</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/setup.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">setup_epgenhanced</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/Note_cronr.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">setup_epginfobargraphical</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/osd_setup.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">setup_epggraphical</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/inadyn.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">setup_epgmulti</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/setup.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">crossepg_main</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+  </screen>
+  <screen name="menu_epgloadsave_menu" position="0,0" size="1920,1080" title="Main menu" flags="wfNoBorder" backgroundColor="transparent">
+    <ePixmap pixmap="Goliath_RV2_1080p_HD/back/menu_dont_copy.png" position="0,0" size="1920,1080" zPosition="1" alphatest="on" />
+    <widget backgroundColor="un20000000" font="Regular;40" halign="center" position="216,40" render="Label" size="495,60" source="title" transparent="1" foregroundColor="header" zPosition="2" />
+    <widget source="menu" render="Listbox" position="317,170" size="691,60" zPosition="2" scrollbarMode="showNever" transparent="1" foregroundColor="white" foregroundColorSelected="selectedFG" backgroundColor="da3636" backgroundColorSelected="da3636">
+      <convert type="TemplatedMultiContent">
+				{"template": [ MultiContentEntryText(pos = (15, 4), size = (620, 40), flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER|RT_WRAP, text = 0) ],
+                        	"fonts": [gFont("Regular", 36)],
+				"itemHeight": 50
+				}
+			</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="1404,45" size="269,42" font="Regular; 40" halign="left" backgroundColor="bgmain" transparent="1" zPosition="5" foregroundColor="header">
+      <convert type="ClockToText">Format:%d.%m.%Y</convert>
+    </widget>
+    <widget source="global.CurrentTime" render="Label" position="1679,45" size="149,42" font="Regular; 40" backgroundColor="bgmain" transparent="1" halign="center" valign="center" zPosition="6" foregroundColor="header">
+      <convert type="ClockToText">Default</convert>
+    </widget>
+    <!-- ///*** MAIN MENU ***\\\ -->
+    <ePixmap pixmap="Goliath_RV2_1080p_HD/menu_icons/Query.png" position="27,12" size="256,256" zPosition="2" name="icon_clock" alphatest="blend" />
+    <widget source="menu" title="Timer selection" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/Desktop Folder_mirror.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">saveepgcache</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" title="Timer selection" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/Documents_mirror.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">loadepgcache</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+    <widget source="menu" title="Timer selection" render="Pixmap" pixmap="Goliath_RV2_1080p_HD/menu_icons/DiskCleanup_mirror.png" position="1150,28" size="256,256" alphatest="blend">
+      <convert type="MenuEntryCompare">deleteepgcache</convert>
+      <convert type="ConditionalShowHide" />
+    </widget>
+  </screen>
+</skin>

@@ -1,0 +1,230 @@
+<skin>
+  <copyright>
+    <!--  ##############  DONT REMOVE THIS DISCLAIMER ######################  -->
+    <!--  ################# THIS SKIN IS COPYRIGHT PROTECTED AND IS NOT FREE ##########  -->
+    <!--  ################# DO NOT REMOVE OR CHANGE THIS HEADER AND SKIN NAME !!! ##########  -->
+    <!-- ##########  Special applies this warning for member LUCEK SAT  #######  -->
+    <!--  ########## Skin: ~ Goliath_2_1080p_HD_by_mamba65" ~  ##########  -->
+    <!--  ########## You are not allowed to Mod and publish my skin without my permission ##########  -->
+    <!-- ##########  All Skin Parts created by mamba65  #######  -->
+  </copyright>
+  <output id="0">
+    <resolution xres="1920" yres="1080" bpp="32" />
+  </output>
+  <colors>
+    <color name="666666" value="#00666666" />
+    <color name="back" value="#12000000" />
+    <color name="back1" value="#19000000" />
+    <color name="background" value="#25040f28" />
+    <color name="background1" value="#20000000" />
+    <color name="background2" value="#2538454e" />
+    <color name="background3" value="#2548555e" />
+    <color name="background4" value="#1a0f0f0f" />
+    <color name="background5" value="#1a27408b" />
+    <color name="bgblue" value="#080046a8" />
+    <color name="bgbutton" value="#0018191b" />
+    <color name="bgkey" value="#0018191b" />
+    <color name="bgmain" value="#10000000" />
+    <color name="bgosd" value="#10242629" />
+    <color name="bgrey" value="#10595d63" />
+    <color name="bgreyz" value="#10585d62" />
+    <color name="black" value="#00000000" />
+    <color name="blue" value="#00008cff" />
+    <color name="blue1" value="#40003a4d" />
+    <color name="blue2" value="#00003a4f" />
+    <color name="blue3" value="#00003e53" />
+    <color name="blue4" value="#0004aeda" />
+    <color name="border1" value="#004872a0" />
+    <color name="button" value="#00ffffff" />
+    <color name="cyan" value="#0000deff" />
+    <color name="da3636" value="#00da3636" />
+    <color name="dark" value="#15102748" />
+    <color name="darkgrey" value="#004a4a4a" />
+    <color name="fontcolor" value="#00ffffff" />
+    <color name="foreground" value="#00dddddd" />
+    <color name="green" value="#00389416" />
+    <color name="grey" value="#009f9f9f" />
+    <color name="grey3" value="#00a6a6a6" />
+    <color name="greys" value="#10ebebeb" />
+    <color name="greys2" value="#00e6e6e6" />
+    <color name="header" value="#20000000" />
+    <color name="hellgreen" value="#2256c856" />
+    <color name="info" value="#000068f4" />
+    <color name="ips" value="#10333333" />
+    <color name="ips1" value="#10cc9923" />
+    <color name="ips2" value="#0030484d" />
+    <color name="ips3" value="#162b3447" />
+    <color name="ips4" value="#00ff8000" />
+    <color name="lightgrey" value="#00cccccc" />
+    <color name="listback" value="#254f7497" />
+    <color name="listback1" value="#00546475" />
+    <color name="mambas" value="#00de4c4c" />
+    <color name="mambasBackground" value="#40000000" />
+    <color name="orange" value="#00fc6a12" />
+    <color name="orange1" value="#00ff3300" />
+    <color name="orange2" value="#00ff6600" />
+    <color name="red" value="#00ff2828" />
+    <color name="selbutton" value="#000046a8" />
+    <color name="selectedScrollBG" value="#001a1a41" />
+    <color name="selectedScrollFG" value="#00ffffff" />
+    <color name="transparent" value="#ff000000" />
+    <color name="transparent2" value="#ff000000" />
+    <color name="transpBlack" value="#21000000" />
+    <color name="transpGrey" value="#21363636" />
+    <color name="transpWhite" value="#77ffffff" />
+    <color name="transpyellow" value="#33bab329" />
+    <color name="un10005391" value="#10005391" />
+    <color name="un1006578f" value="#1006578f" />
+    <color name="un101010" value="#00101010" />
+    <color name="un11000000" value="#11000000" />
+    <color name="un11404040" value="#11404040" />
+    <color name="un174c90" value="#00174c90" />
+    <color name="un1f771f" value="#001f771f" />
+    <color name="un20000000" value="#20000000" />
+    <color name="un2040" value="#00002040" />
+    <color name="un272727" value="#00272727" />
+    <color name="un3222222" value="#03222222" />
+    <color name="un333333" value="#00333333" />
+    <color name="un363636" value="#00363636" />
+    <color name="un44000000" value="#44000000" />
+    <color name="un458a" value="#0000458a" />
+    <color name="un54111112" value="#54111112" />
+    <color name="un59c9ff" value="#0059c9ff" />
+    <color name="un616161" value="#00616161" />
+    <color name="un800000" value="#00800000" />
+    <color name="un80ff80" value="#0080ff80" />
+    <color name="un8ddaff" value="#008ddaff" />
+    <color name="un959595" value="#00959595" />
+    <color name="un9f1313" value="#009f1313" />
+    <color name="un9f4f6" value="#0009f4f6" />
+    <color name="uncccccc" value="#00cccccc" />
+    <color name="undcaaaa" value="#00dcaaaa" />
+    <color name="une5b243" value="#00e5b243" />
+    <color name="unf23d21" value="#00f23d21" />
+    <color name="unfcc000" value="#00fcc000" />
+    <color name="unfcfcfc" value="#00fcfcfc" />
+    <color name="white" value="#00ffffff" />
+    <color name="yellow" value="#00bab329" />
+    <color name="yellow1" value="#00cc9329" />
+  </colors>
+  <parameters>
+    <parameter name="FileListIcon" value="10,20,42,25" />
+    <parameter name="FileListName" value="40,2,800,37" />
+    <parameter name="PlayListIcon" value="10,20,42,25" />
+    <parameter name="PlayListName" value="40,0,800,37" />
+    <parameter name="PluginBrowserIcon" value="20,15,100,40" />
+    <parameter name="PluginBrowserName" value="180,2,45" />
+    <parameter name="PluginBrowserDescr" value="180,38,30" />
+    <parameter name="PluginBrowserDownloadIcon" value="10,0,80,71" />
+    <parameter name="PluginBrowserDownloadName" value="90,9,32" />
+    <parameter name="PluginBrowserDownloadDescr" value="120,39,55" />
+    <parameter name="SelectionListLock" value="10,2,35,35" />
+    <parameter name="SelectionListLockOff" value="10,2,35,35" />
+    <parameter name="SelectionListDescr" value="60,2,820,32" />
+    <parameter name="HelpMenuListHlp" value="0,0,840,42" />
+    <parameter name="HelpMenuListExtHlp0" value="0,0,840,39" />
+    <parameter name="HelpMenuListExtHlp1" value="0,42,840,30" />
+    <parameter name="ConfigListSeperator" value="300" />
+    <parameter name="ChoicelistIcon" value="15,0,42,71" />
+    <parameter name="ChoicelistDash" value="0,0,850,30" />
+    <parameter name="ChoicelistName" value="75,0,850,35" />
+    <parameter name="ServiceInfoLeft" value="0,0,450,45" />
+    <parameter name="ServiceInfoRight" value="285,0,1200,45" />
+    <parameter name="DreamexplorerName" value="62,0,800,40" />
+    <parameter name="DreamexplorerIcon" value="15,4,30,30" />
+    <parameter name="VirtualKeyboard" value="68,60" />
+  </parameters>
+  <fonts>
+    <font filename="Goliath_RV2_1080p_HD/fonts/Mamba65.ttf" name="Regular" scale="100" />
+    <font filename="lcd.ttf" name="LCD" scale="100" />
+    <font filename="ae_AlMateen.ttf" name="Replacement" scale="95" replacement="1" />
+    <font filename="tuxtxt.ttf" name="Console" scale="100" />
+    <alias name="ChoiceList" font="Regular" size="27" height="48" />
+    <alias name="PluginBrowser0" font="Regular" size="27" height="60" />
+    <alias name="PluginBrowser1" font="Regular" size="20" height="60" />
+    <alias name="Body" font="Regular" size="27" height="60" />
+    <alias name="Dreamexplorer" font="Regular" size="27" height="60" />
+    <alias name="SelectionList" font="Regular" size="32" height="60" />
+    <alias name="FileList" font="Regular" size="27" height="60" />
+    <alias name="FileListMulti" font="Regular" size="32" height="60" />
+    <alias name="TextNormal" font="Regular" size="32" height="60" />
+    <alias name="PlayList" font="Regular" size="32" height="60" />
+    <alias name="ServiceInfo" font="Regular" size="27" height="60" />
+    <alias name="HelpMenuListExt0" font="Regular" size="27" height="60" />
+    <alias name="HelpMenuListExt0" font="Regular" size="27" height="60" />
+    <alias name="HelpMenuListExt1" font="Regular" size="27" />
+    <alias name="HelpMenuList" font="Regular" size="27" height="60" />
+    <alias name="VirtualKeyboard" font="Regular" size="28" height="60" />
+  </fonts>
+    <!-- SKINPARTS -->
+  <include filename="/usr/share/enigma2/obh.xml" />
+  <include filename="/usr/share/enigma2/sec.info.xml" />
+  <include filename="/usr/share/enigma2/skin_part_A-L.xml" />
+  <include filename="/usr/share/enigma2/skin_part_M-Z.xml" />
+  <include filename="/usr/share/enigma2/menus.xml" />
+  <include filename="/usr/share/enigma2/info.p.xml" />
+  <!-- SKINPARTS -->
+  <windowstyle type="skinned" id="0">
+    <title offset="19,12" font="Regular;32" />
+    <color name="Background" color="black" />
+    <color name="LabelForeground" color="button" />
+    <color name="ListboxBackground" color="black" />
+    <color name="ListboxForeground" color="grey" />
+    <color name="ListboxSelectedBackground" color="selbutton" />
+    <color name="ListboxSelectedForeground" color="button" />
+    <color name="ListboxMarkedBackground" color="selbutton" />
+    <color name="ListboxMarkedForeground" color="un80ff80" />
+    <color name="ListboxMarkedAndSelectedBackground" color="selbutton" />
+    <color name="ListboxMarkedAndSelectedForeground" color="un80ff80" />
+    <color name="WindowTitleForeground" color="button" />
+    <color name="WindowTitleBackground" color="un101010" />
+    <borderset name="bsWindow">
+      <pixmap pos="bpTopLeft" filename="Goliath_RV2_1080p_HD/b_tl.png" />
+      <pixmap pos="bpTop" filename="Goliath_RV2_1080p_HD/b_t.png" />
+      <pixmap pos="bpTopRight" filename="Goliath_RV2_1080p_HD/b_tr.png" />
+      <pixmap pos="bpLeft" filename="Goliath_RV2_1080p_HD/b_l.png" />
+      <pixmap pos="bpRight" filename="Goliath_RV2_1080p_HD/b_r.png" />
+      <pixmap pos="bpBottomLeft" filename="Goliath_RV2_1080p_HD/b_bl.png" />
+      <pixmap pos="bpBottom" filename="Goliath_RV2_1080p_HD/b_b.png" />
+      <pixmap pos="bpBottomRight" filename="Goliath_RV2_1080p_HD/b_br.png" />
+    </borderset>
+    <borderset name="bsListboxEntry">
+      <pixmap pos="bpTop" filename="Goliath_RV2_1080p_HD/h-white.png" />
+      <pixmap pos="bpBottom" filename="Goliath_RV2_1080p_HD/h-white.png" />
+    </borderset>
+    <!-- borderset name="bsButton">
+<pixmap pos="bpTopLeft" filename="Goliath_RV2_1080p_HD/white.png"/>
+<pixmap pos="bpTop" filename="Goliath_RV2_1080p_HD/h-white.png"/>
+<pixmap pos="bpTopRight" filename="Goliath_RV2_1080p_HD/white.png"/>
+<pixmap pos="bpLeft" filename="Goliath_RV2_1080p_HD/v-white.png"/>
+<pixmap pos="bpRight" filename="Goliath_RV2_1080p_HD/v-white.png"/>
+<pixmap pos="bpBottomLeft" filename="Goliath_RV2_1080p_HD/white.png"/>
+<pixmap pos="bpBottom" filename="Goliath_RV2_1080p_HD/h-white.png"/>
+<pixmap pos="bpBottomRight" filename="Goliath_RV2_1080p_HD/white.png"/>
+</borderset -->
+  </windowstyle>
+  <windowstyle type="skinned" id="1">
+    <color name="Background" color="black" />
+    <color name="LabelForeground" color="button" />
+    <color name="ListboxBackground" color="black" />
+    <color name="ListboxForeground" color="button" />
+    <color name="ListboxSelectedBackground" color="black" />
+    <color name="ListboxSelectedForeground" color="blue3" />
+    <color name="ListboxMarkedBackground" color="black" />
+    <color name="ListboxMarkedForeground" color="blue3" />
+    <color name="ListboxMarkedAndSelectedBackground" color="black" />
+    <color name="ListboxMarkedAndSelectedForeground" color="blue3" />
+    <color name="WindowTitleForeground" color="button" />
+    <color name="WindowTitleBackground" color="black" />
+  </windowstyle>
+  <windowstylescrollbar id="4">
+    <value name="BackgroundPixmapTopHeight" value="3" />
+    <value name="BackgroundPixmapBottomHeight" value="3" />
+    <value name="ValuePixmapTopHeight" value="3" />
+    <value name="ValuePixmapBottomHeight" value="3" />
+    <value name="ScrollbarWidth" value="3" />
+    <value name="ScrollbarBorderWidth" value="1" />
+    <pixmap name="BackgroundPixmap" filename="Goliath_RV2_1080p_HD/icons/scrollbar-back.png" />
+    <pixmap name="ValuePixmap" filename="Goliath_RV2_1080p_HD/icons/scrollbar.png" />
+  </windowstylescrollbar>
+</skin>
